@@ -8,5 +8,5 @@ compile-ruby-ext:
 	cd ext && make
 
 clean:
-	rm -rf ext/ofa.* ext/Makefile
+	rm -rf ext/ofa.* ext/Makefile ext/*.log
 
