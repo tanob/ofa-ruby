@@ -1,7 +1,7 @@
 all: gen-ruby-ext compile-ruby-ext
 
 gen-ruby-ext:
-	swig -includeall -ignoremissing -ruby -o ext/ofa.c -module ofa ofa.h 
+	swig -ruby -o ext/ofa.c ofa.i 
 	cd ext && ruby extconf.rb
 
 compile-ruby-ext:
