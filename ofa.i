@@ -9,5 +9,5 @@
 void ofa_get_version(int *OUTPUT, int *OUTPUT, int *OUTPUT);
 
 %rename(create_fingerprint) ofa_create_print;
-const char *ofa_create_print(unsigned char* samples, int byteOrder, long size, int sRate, int stereo);
+const char *ofa_create_print(unsigned char* INPUT, int byteOrder, long size, int sRate, int stereo);
 
