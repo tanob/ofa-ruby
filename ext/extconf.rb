@@ -1,4 +1,4 @@
 require 'mkmf'
 find_library('ofa', nil)
-create_makefile('ext/ofa')
+create_makefile('ofa')
 
