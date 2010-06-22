@@ -1,12 +1,11 @@
-all: gen-ruby-ext compile-ruby-ext
+all: gen-ruby-ext build-gem
 
 gen-ruby-ext:
-	swig -ruby -o ext/ofa.c ofa.i 
-	cd ext && ruby extconf.rb
+	swig -ruby -o ext/ofa.c src/ofa.i 
 
-compile-ruby-ext:
-	cd ext && make
+build-gem:
+	gem build ofa.gemspec
 
-clean:
-	rm -rf ext/ofa.* ext/Makefile ext/*.log
+push-gem:
+	gem push ofa-*.gem
 
