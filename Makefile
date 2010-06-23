@@ -9,3 +9,5 @@ build-gem:
 push-gem:
 	gem push ofa-*.gem
 
+clean:
+	rm -rf ext/ofa.{o,bundle} ext/{Makefile,*.log} *.gem
