@@ -1,5 +1,9 @@
 %module ofa
 
+%inline %{
+#include <ofa1/ofa.h>
+%}
+
 %include typemaps.i
 
 %rename(version) ofa_get_version;
@@ -13,7 +17,7 @@ const char *wrap_create_fingerprint(const char *data, long size, int sRate, int 
 #else
 #define ENDIANESS (0)
 #endif
-        return ofa_create_print(data, ENDIANESS, size, sRate, stereo);
+        return ofa_create_print((unsigned char *)data, ENDIANESS, size, sRate, stereo);
 }
 %}
 
