@@ -9,7 +9,7 @@ How to use
 	require 'ofa'
 
 	sample_rate = 44100
-	stereo = 1
+	stereo = true
 	data = File.read('music.wav')
 	puts "Using libofa version: #{Ofa::version.join('.')}"
 	puts 'Calculated PUID:', Ofa::create_fingerprint(data, data.size/2, sample_rate, stereo)
