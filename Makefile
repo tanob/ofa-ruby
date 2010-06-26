@@ -3,10 +3,10 @@ all: gen-ruby-ext build-gem
 gen-ruby-ext:
 	swig -Wall -c++ -ruby -o ext/ofa.cpp src/ofa.i
 
-build-gem:
+build-gem: gen-ruby-ext
 	gem build ofa.gemspec
 
-push-gem:
+push-gem: build-gem
 	gem push ofa-*.gem
 
 clean:
